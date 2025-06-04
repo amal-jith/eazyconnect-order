@@ -1,0 +1,1349 @@
+  {% extends 'base.html' %}
+  {% load static %}
+
+  {% block title %}EazyConnect - Try Now{% endblock %}
+
+      {% block content %}
+
+        <div class="container section-container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+
+
+          <!--Step 1-->
+
+            <div class="card order-main-section step-box" id="step1">
+              <div class="card-body p-0">
+
+                  <div class="d-flex justify-content-between align-items-center">
+                      <span class="order-span">Let's get you eazyconnected</span>
+                      <button class="btn-close" aria-label="close" type="button"></button>
+                  </div>
+
+                  <!--Stepper Order-->
+                  <div class="stepper-container">
+                    <ul class="stepper">
+                      <li>
+                        <div class="circle active"></div>
+                        <div class="label active">Availability</div>
+                      </li>
+                      <li>
+                        <div class="circle"></div>
+                        <div class="label">Choose Plan</div>
+                      </li>
+                      <li>
+                        <div class="circle"></div>
+                        <div class="label">Choose Number</div>
+                      </li>
+                      <li>
+                        <div class="circle"></div>
+                        <div class="label">Create Account</div>
+                      </li>
+                      <li>
+                        <div class="circle"></div>
+                        <div class="label">Order Summary</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="card code-card">
+                      <div class="card-body p-0">
+                        <h5 class="title-1">Where do you need the service?</h5>
+                        <h6 class="title-2">Provide us with your location to check plan availability</h6>
+
+                        <form id="step1Form">
+                          <div class="form-group">
+                          <div class="button-wrapper d-flex justify-content-center align-items-center">
+                            <div class="button-group w-100 d-flex">
+                              <button type="button" class="btn for-btn active w-50" id="btn-home">For my Home</button>
+                              <button type="button" class="btn for-btn w-50" id="btn-business">For my Business</button>
+                            </div>
+                          </div>
+                            <!-- Hidden input to store selected value -->
+                            <input type="hidden" id="usageTypeInput" name="usage_type" value="For my Home" />
+                          </div>
+                          <div class="input-field-1">
+                            <div class="form-group">
+                              <h6 class="title-21 mb-3">eazyconnect is currently available only in select Metro Vancouver municipalities
+                                – Surrey, Langley, Coquitlam, Port Coquitlam, Port Moody, Pitt Meadows and Maple Ridge.
+                              </h6>
+                            <div class="mb-3">
+                              <label for="" class="form-label label-1">City</label>
+                              <input type="text" class="form-control step-1-form required" id="cityInput" placeholder="Eg: New York">
+                            </div>
+                            </div>
+                            <div class="form-group">
+                            <div class="mb-3">
+                              <label for="" class="form-label label-1">Postal Code</label>
+                              <input type="text" class="form-control step-1-form required" id="postalInput" placeholder="Ex. 103 456">
+                            </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="row w-100">
+                  <div class="col-md-6">
+                    <div class="price-info d-flex align-items-center gap-3">
+                      <div class="price-range">$0</div>
+                      <div class="price-info-other">
+                        <div class="est-price">Estimated Price</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                    <button class="btn previous-btn disabled" type="button">Previous</button>
+                    <button class="btn next-btn" type="button" id="step1NextBtn">Next</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!--Step 2-->
+
+            <div class="card order-main-section step-box" id="step2"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Set up your plan</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Create Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="heading-group">
+                    <h5 class="title-1">Choose your business plan</h5>
+                    <h6 class="title-2">We have many that suits your needs</h6>
+                  </div>
+                </div>
+
+                <div class="card plan-main-card border-0">
+                  <h6 class="title-2">You can we the detailed pricing <a href="https://eazyconnect.ca/pricing/" target="_blank" class="flowLink">here</a>.</h6>
+                  <div class="card-body p-0">
+
+                    <div class="pricing-toggle mx-auto mt-4">
+                      <button id="monthlyBtn" class="active">Monthly</button>
+                      <button id="yearlyBtn">Yearly <span class="badge-offer">Save upto 17%</span></button>
+                      <button id="onetimeBtn">Onetime payment <span class="badge-offer">Save upto 32%</span></button>
+                    </div>
+
+                  <!--Monthly Plans-->
+                    <div class="plan-section" id="monthlyPlans">
+                      <h6 class="title-2 mb-4">Business Voice Plans</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                        {% for plan in monthly_plans %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.id }}" data-type="monthly" data-price="{{ plan.monthly_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.monthly_price }}/mo</h5>
+                                  <h6 class="title-13">${{ plan.yearly_price }}/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_2 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_3 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_4 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_5 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.id }}')">Buy Now</button>
+                                <button type="button" class="btn try-for-free" onclick="selectPlan('{{ plan.id }}')">15 days free trial</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+
+                      </div>
+                    </div>
+
+                    <!--Yearly Plans-->
+                    <div class="plan-section" id="yearlyPlans" style="display: none;">
+
+                      <h6 class="title-2 mb-4">Business Voice Plans</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for plan in yearly_voice_plans %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.yearly_id }}" data-type="yearly" data-price="{{ plan.monthly_equivalent_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.monthly_equivalent_price }}/mo</h5>
+                                  <h6 class="title-13">${{ plan.yearly_price }}/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.yearly_id }}')">Buy Now</button>
+                                <button type="button" class="btn try-for-free" onclick="selectPlan('{{ plan.yearly_id }}')">15 days free trial</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+
+                      <h6 class="title-2 mb-4 mt-4">Business Safety Plans (1 Yr)</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for plan in yearly_safety_1yr %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.yearly_id }}" data-type="yearly" data-price="{{ plan.monthly_equivalent_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.monthly_equivalent_price }}/mo</h5>
+                                  <h6 class="title-13">${{ plan.yearly_price }}/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.yearly_id }}')">Buy Now</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+
+                      <h6 class="title-2 mb-4 mt-4">Business Safety Plans (2 Yrs)</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for plan in yearly_safety_2yr %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.yearly_id }}" data-type="yearly" data-price="{{ plan.monthly_equivalent_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.monthly_equivalent_price }}/mo</h5>
+                                  <h6 class="title-13">${{ plan.yearly_price }}/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.yearly_id }}')">Buy Now</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+
+                    </div>
+
+                    <!--One Time Payment Plans-->
+                    <div class="plan-section" id="onetimePlans" style="display: none;">
+
+                      <h6 class="title-2 mb-4">Business Voice Plans</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for plan in onetime_plans %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.onetime_id }}" data-type="onetime" data-price="{{ plan.yearly_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.yearly_price }}</h5>
+                                  <h6 class="title-13">$/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.onetime_id }}')">Buy Now</button>
+                                <button type="button" class="btn try-for-free" onclick="selectPlan('{{ plan.onetime_id }}')">15 days free trial</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+
+                      </div>
+                    </div>
+
+                      <div class="see-more">
+                        <button type="button" class="btn see-plans">See plans for your Home Instead</button>
+                      </div>
+
+                    <div class="plan-section" id="homePlans" style="display: none;">
+                      <h6 class="title-2 mb-4">Home Plans</h6>
+                      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                        {% for plan in home_plans %}
+                        <div class="col-md-6">
+                          <div class="card plan-card" data-id="{{ plan.id }}" data-type="monthly" data-price="{{ plan.monthly_price }}">
+                            <div class="card-body p-0">
+                              <!--Top section-->
+                              <div class="top-section">
+                                <div class="">
+                                  <h5 class="title-10">{{ plan.name }}</h5>
+                                  <h6 class="title-11">Billed monthly.</h6>
+                                </div>
+                                <div class="">
+                                  <h5 class="title-12">${{ plan.monthly_price }}/mo</h5>
+                                  <h6 class="title-13">${{ plan.yearly_price }}/year</h6>
+                                </div>
+                              </div>
+                              <!--Middle section-->
+                              <div class="middle-section">
+                                <ul class="list-unstyled mb-0">
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_1 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_2 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_3 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_4 }}</li>
+                                  <li class="title-14"><img src="{% static 'images/Checkicon.svg' %}" class="check-m me-1">{{ plan.feature_5 }}</li>
+                                </ul>
+                              </div>
+                              <!--Bottom section-->
+                              <div class="bottom-section d-flex flex-column flex-md-row gap-2">
+                                <button type="button" class="btn buy-now" onclick="selectPlan('{{ plan.id }}')">Buy Now</button>
+                                <button type="button" class="btn try-for-free" onclick="selectPlan('{{ plan.id }}')">15 days free trial</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="choose-section">
+
+                      <div class="d-flex justify-content-center">
+                        <div class="heading-group">
+                          <h5 class="title-1">Choose your number of users</h5>
+                          <h6 class="title-2">Allocate users on a single plan or over multiple plans as per your needs</h6>
+                        </div>
+                      </div>
+
+                      <div class="section-5">
+                        <div class="row mb-4">
+                          <div class="col-md-6">
+                            <label  class="form-label label-1">Enter Number of Users</label>
+                            <input type="text" class="form-control step-1-form required" id="numberOfUsers" placeholder="Eg: 20">
+                          </div>
+<!--                          <div class="col-md-6">-->
+<!--                            <div class="switch-div">-->
+<!--                              <div class="form-check form-switch d-flex justify-content-between align-items-center w-100 p-0">-->
+<!--                                  <div class="d-flex flex-column">-->
+<!--                                    <span class="title-15">Every user is on the same plan</span>-->
+<!--                                    <span class="title-16">Select this if all users are on the same plan.</span>-->
+<!--                                  </div>-->
+<!--                                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" checked>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+                        </div>
+                        <div class="row mb-4">
+                          <div class="col-md-6">
+                            <label  class="form-label label-1">Select Plan 1</label>
+                            <select class="form-select select-form" aria-label="selectPlan1">
+                              <option selected>Plan 1</option>
+                              <option value="1">Plan 2</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label  class="form-label label-1">Add users to plan</label>
+                            <input type="text" class="form-control step-1-form required" id="selectPlan1Users" placeholder="Eg: 10">
+                          </div>
+                        </div>
+                        <div class="row mb-4" style="display:none;">
+                          <div class="col-md-6">
+                            <label  class="form-label label-1">Select Plan 2</label>
+                            <select class="form-select select-form" aria-label="selectPlan2">
+                              <option selected>20</option>
+                              <option value="1">21</option>
+                              <option value="2">22</option>
+                              <option value="3">23</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label  class="form-label label-1">Add users to plan</label>
+                            <input type="text" class="form-control step-1-form required" id="selectPlan2Users" placeholder="Eg: 10">
+                          </div>
+                        </div>
+
+
+<!--                        <div style="margin-top: 1.5rem;">-->
+<!--                          <button type="button" class="btn new-plan w-100">Add New Plan<img src="{% static 'images/plus.svg' %}"> </button>-->
+<!--                        </div>-->
+                      </div>
+
+                    </div>
+
+                    <div class="phone-section">
+                      <div class="d-flex justify-content-center">
+                        <div class="heading-group">
+                          <h5 class="title-1">Choose your Device</h5>
+                          <h6 class="title-2" id="deviceLimitText">You can choose 0 devices from the list.</h6>
+                        </div>
+                      </div>
+
+                      <div class="section-6">
+
+                        <div class="row row-cols-1 row-cols-md-4 g-2">
+
+                          {% for phone in products %}
+                          <div class="col">
+                            <div class="card phone-card" data-id="{{ phone.phone_id }}" data-price="{{ phone.price }}">
+                              <div class="image-border">
+                                <img src="{{ phone.image.url }}" class="card-img-top" alt="...">
+                              <!-- Quantity Selector aligned bottom-right -->
+                                <div class="position-absolute" style="bottom: 3.8rem; right: 3px;">
+                                  <div class="d-flex justify-content-center align-items-center border px-2 py-1" style="border-color: #ff6a00; color: #ff6a00;">
+                                    <button class="btn btn-sm px-2 py-0 text-orange border-0 btn-decrease">–</button>
+                                    <span class="mx-2 quantity">0</span>
+                                    <button class="btn btn-sm px-2 py-0 text-orange border-0 btn-increase">+</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="card-body p-0 mt-3">
+                                <p class="phone-title">{{ phone.name }}</p>
+                                <p class="phone-price">$ {{ phone.price }}</p>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="card-footer">
+                <div class="row w-100">
+                  <div class="col-md-6">
+                    <div class="price-info d-flex align-items-center gap-3">
+                      <div class="price-range">$0</div>
+                      <div class="price-info-other">
+                        <div class="est-price">Estimated Price</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                    <button class="btn previous-btn previous-step1-btn" type="button">Previous</button>
+                    <button class="btn next-btn next-step2-btn" type="button" >Next</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!--Step 3-->
+
+            <div class="card order-main-section step-box" id="step3"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Choose your Numbers</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Create Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex flex-column align-items-center">
+                  <!-- Centered Code Card -->
+                  <div class="code-card-wrapper">
+                    <div class="card code-card" style="margin-bottom: 0 !important;">
+                      <div class="card-body p-0">
+                        <h5 class="title-1">Choose your Eazyconnect number</h5>
+                        <h6 class="title-2">Either opt for a new number or port your existing number</h6>
+                        <div class="switch-div">
+                          <div class="form-check form-switch d-flex justify-content-between align-items-center w-100 p-0">
+                            <label class="form-check-label switch-title" >
+                              Move (port) my current phone numbers to Eazyconnect
+                            </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="portToggle">
+                          </div>
+                          <!-- Dynamic input field container -->
+                          <div id="portInputContainer" class="mt-2" ></div>
+                        </div>
+                        <p class="title-3">
+                          Porting process is part of your package and does not have additional charge. Porting will be usually completed
+                          within X days for local numbers X days for toll-free numbers. After signing up you will need to select a
+                          temporary number in your account. We will also send more information on porting to the contact email you provide
+                        </p>
+                        <div class="switch-div-1">
+                          <div class="form-check form-switch d-flex justify-content-between align-items-center w-100 p-0">
+                            <label class="form-check-label switch-title" for="needPhoneToggle">
+                              I need new phone number(s) from EazyConnect
+                            </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="needPhoneToggle">
+                          </div>
+                        </div>
+                        <div class="switch-div-1">
+                          <div class="form-check form-switch d-flex justify-content-between align-items-center w-100 p-0">
+                            <label class="form-check-label switch-title" for="needTollFreeToggle">
+                              I need new toll free number(s) from EazyConnect
+                            </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="needTollFreeToggle">
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="row row-cols-1 row-cols-md-2 g-4" style="display:none;">
+                            <div class="col-md-6">
+                              <div class="">
+                                <label for="exampleFormControlInput1" class="form-label label-1">City</label>
+                                <select class="form-select select-form" id="citySelect" aria-label="">
+                                  <option value="city1" selected>City 1</option>
+                                  <option value="city2">City 2</option>
+                                  <option value="city3">City 3</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="">
+                                <label for="exampleFormControlInput1" class="form-label label-1">Area Code</label>
+                                <select class="form-select select-form" id="areaCodeSelect" aria-label="">
+                                  <option value="code1" selected>Code 1</option>
+                                  <option value="code2">Code 2</option>
+                                  <option value="code3">Code 3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <p class="title-3 port-note" style="max-width: 40rem; display: none;">
+                       After you sign up for EazyConnect, we’ll guide you through the number porting process via email.
+                    It’s free and usually completed within a week. To make sure you’re up and running right away, we’ll
+                    give you a temporary number while your existing number is being transferred.
+                    </p>
+
+
+                  <!-- Centered Number Selector -->
+<!--                  <h6 class="number-selector-title"  style="margin-top: 1.5rem; margin-bottom: 0;">Select any of the following numbers</h6>-->
+<!--                  <div class="select-section">-->
+<!--                    <div class="number-selector-container">-->
+<!--                        <div class="number-selector-wrapper">-->
+<!--                          <button class="nav-button left">-->
+<!--                            <img src="{% static 'images/arrow-left.svg' %}" alt="Back">-->
+<!--                          </button>-->
+
+<!--                          <div class="number-grid">-->
+<!--                            <div class="number">6482 648 5904</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+
+<!--                            <div class="number selected">6482 648 5904</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+
+<!--                            <div class="number">6482 648 5904</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                            <div class="number">6482 647 1184</div>-->
+<!--                          </div>-->
+
+<!--                          <button class="nav-button right">-->
+<!--                            <img src="{% static 'images/arrow-left.svg' %}" alt="Back">-->
+<!--                          </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <div class="row w-100 mt-4">
+                  <div class="col-md-6">
+                    <div class="price-info d-flex align-items-center gap-3">
+                      <div class="price-range">$0</div>
+                      <div class="price-info-other">
+                        <div class="est-price">Estimated Price</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end gap-2 align-items-center">
+                    <button class="btn previous-btn choose-prev-btn" type="button">Previous</button>
+                    <button class="btn next-btn choose-number-nxt-btn" type="button">Next</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          <!--Step 4-->
+
+            <div class="card order-main-section step-box" id="step4"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Almost There!</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Create Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="card code-card">
+                    <div class="card-body p-0">
+                      <h5 class="title-1">Choose your installation type</h5>
+                      <h6 class="title-2">We offer installation over the phone and in person</h6>
+                      <div class="choose">
+                        <div class="card installation-card">
+                          <div class="card-body install">
+                            <h5 class="install-title">Self Installation</h5>
+                            <p class="install-title-1">For users who are comfortable with setting up the service themselves with support from a simple manual.</p>
+                          </div>
+                        </div>
+                        <div class="card installation-card">
+                          <div class="card-body install">
+                            <div class="install-title-row">
+                              <h5 class="install-title">Remote Installation Support</h5>
+                              <span class="install-price" style="text-decoration-line: line-through;">$50</span>
+                            </div>
+                            <p class="install-title-1">Users who can set up the service with remote guidance from Eazyconnect team.</p>
+                            <button type="button" class="btn free-btn">Free for Limited Time!</button>
+                          </div>
+                        </div>
+                        <div class="card installation-card">
+                          <div class="card-body install">
+                            <div class="install-title-row">
+                              <h5 class="install-title">Onsite Installation</h5>
+                              <span class="install-price">$99.99</span>
+                            </div>
+                            <p class="install-title-1">Eazyconnect team will come to your location to install the service</p>
+                          </div>
+                        </div>
+
+                        <div class="button-choose d-flex flex-column gap-3 w-100">
+                          <button class="btn next-btn install-type-btn w-100" type="button">Next</button>
+                          <button class="btn previous-btn install-prev-type-btn w-100" type="button">Previous</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+          <!--Step 5-->
+
+            <div class="card order-main-section step-box" id="step5"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Create your Account</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Create Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="card code-card">
+                    <div class="card-body p-0">
+                      <h5 class="title-1">Create your account</h5>
+                      <h6 class="title-2">You need an account to use Eazyconnect</h6>
+                      <div class="choose">
+                        <div class="input-field-1">
+                          <div class="mb-3">
+                            <label class="form-label label-1">Email</label>
+                            <input type="email" class="form-control step-1-form" id="createEmail" placeholder="Enter your email">
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label label-1">Password</label>
+                            <input type="password" class="form-control step-1-form" id="createPassword" placeholder="Enter password">
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="">
+                            <label class="form-check-label remember" for="exampleCheck1">Remember this device</label>
+                          </div>
+                          <p class="already">Already have an account? <a href="#" id="goToLogin">Log in</a></p>
+                        </div>
+
+                        <div class="section-4">
+                          <div class="card-body p-0">
+                           <h6 class="title-5 mt-5 mb-5">Enter your details</h6>
+                          </div>
+                            <div class="row mb-4">
+                              <div class="col-md-6">
+                                <label for="street" class="form-label label-1">Street</label>
+                                <input type="text" class="form-control step-1-form" id="street" placeholder="Ex. New York">
+                              </div>
+                              <div class="col-md-6">
+                                <label for="unit" class="form-label label-1">Unit</label>
+                                <input type="text" class="form-control step-1-form" id="unit" placeholder="Ex. 103">
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col-md-6">
+                                <label for="city" class="form-label label-1">City</label>
+                                <input type="text" class="form-control step-1-form" id="city" placeholder="Ex. New York">
+                              </div>
+                              <div class="col-md-6">
+                                <label for="zipcode" class="form-label label-1">Zip Code</label>
+                                <input type="text" class="form-control step-1-form" id="zipcode" placeholder="Ex. 123 456">
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col-md-6">
+                                <label for="province" class="form-label label-1">Province</label>
+                                <select class="form-select select-form" aria-label="Select Province" id="province">
+                                  <option selected>Select State</option>
+                                  <option value="GreatBritian">Great Britian</option>
+                                </select>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="countryCanada" class="form-label label-1">Country</label>
+                                <input type="text" class="form-control step-1-form" id="countryCanada" placeholder="Canada">
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col-md-6">
+                                <label for="contactPerson" class="form-label label-1">Contact Person</label>
+                                <input type="text" class="form-control step-1-form" id="contactPerson" placeholder="Ex. New York">
+                              </div>
+                              <div class="col-md-6">
+                                <label  class="form-label label-1">Contact Phone Number</label>
+                                <input type="text" class="form-control step-1-form" id="contactPhone" placeholder="Ex. 123 456">
+                              </div>
+                            </div>
+
+                          </div>
+
+
+
+                        <div class="button-choose d-flex flex-column gap-3 w-100">
+                          <button class="btn next-btn create-nxt-btn w-100" type="button">Create Account</button>
+                          <button class="btn previous-btn install-type-btn w-100" type="button">Previous</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          <!--Step 5.1-->
+
+            <div class="card order-main-section step-box" id="step5-1"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Sign in to your Account</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li class="">
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Sign into Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="card code-card">
+                    <div class="card-body p-0">
+                      <h5 class="title-1">Sign in to your Account</h5>
+                      <h6 class="title-2">You need an account to use Eazyconnect</h6>
+                      <div class="choose">
+                        <div class="input-field-1">
+                          <div class="mb-3">
+                            <label for="loginEmail" class="form-label label-1">Email</label>
+                            <input type="email" class="form-control step-1-form" id="loginEmail" placeholder="Enter your email">
+                          </div>
+                          <div class="mb-3">
+                            <label for="loginPassword" class="form-label label-1">Password</label>
+                            <input type="password" class="form-control step-1-form" id="loginPassword" placeholder="Enter password">
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label remember" for="exampleCheck1">Remember this device</label>
+                          </div>
+                          <p class="already">Don’t have an account? <a href="#" id="goToSignup">Sign up</a></p>
+                        </div>
+
+
+                        <div class="button-choose d-flex flex-column gap-3 w-100">
+                          <button class="btn next-btn login-nxt-btn w-100" type="button">Log In</button>
+                          <button class="btn previous-btn disabled w-100" type="button">Previous</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!--Step 5.2-->
+
+            <div class="card order-main-section step-box" id="step5-2"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">Sign in to your Account</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li class="">
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Sign into Account</div>
+                    </li>
+                    <li>
+                      <div class="circle"></div>
+                      <div class="label">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="card code-card">
+                    <div class="card-body p-0">
+                      <h5 class="title-1">Enter your OTP</h5>
+                      <h6 class="title-2">Check your registered email for your OTP</h6>
+                      <input type="text" class="form-control step-1-form" id="otpInput" placeholder="Enter OTP">
+                      <p class="already mt-5">Didn’t receive OTP? <a href="#">Resend</a></p>
+
+
+                        <div class="button-choose d-flex flex-column gap-3 w-100">
+                          <button class="btn next-btn login-nxt-otp-btn w-100" type="button" id="verifyOtpBtn">Log In</button>
+                          <button class="btn previous-btn login-step-btn w-100" type="button" >Go to LogIn</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+
+          <!--Step 6-->
+
+            <div class="card order-main-section step-box" id="step6"  style="display: none;">
+              <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="order-span">You are almost ready!</span>
+                    <button class="btn-close" aria-label="close" type="button"></button>
+                </div>
+
+                <!--Stepper Order-->
+                <div class="stepper-container">
+                  <ul class="stepper">
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Availability</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Plan</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Choose Number</div>
+                    </li>
+                    <li>
+                      <div class="circle completed"></div>
+                      <div class="label completed">Create Account</div>
+                    </li>
+                    <li>
+                      <div class="circle active"></div>
+                      <div class="label active">Order Summary</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <div class="card code-card">
+                    <div class="card-body p-0">
+                      <h5 class="title-1">Order Summary</h5>
+                      <h6 class="title-2">Here’s an overview of what you’re ordering</h6>
+
+                      <div class="order-section">
+
+                        <div id="selectedPlansSummary"></div>
+                        <div id="selectedDevicesContainer"></div>
+                        <div id="installationTypeSummary" class="mb-3"></div>
+
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="checkedTerms">
+                          <label class="form-check-label" for="checkedTerms">
+                            I have read & understood the <a href="https://eazyconnect.ca/terms/" target="_blank" class="flowLink">terms</a> of the service
+                          </label>
+                        </div>
+
+                        <div class="button-choose d-flex flex-column gap-3 w-100">
+                          <button class="btn next-btn submit-btn w-100" type="button" id="submitOrderBtn">Submit Order</button>
+                          <button class="btn previous-btn disabled w-100" type="button">Previous</button>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          <!--Success Modal-->
+          <div class="modal fade" id="orderSuccessModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Successfully Ordered</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>We will contact you shortly to confirm the details and next steps.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          <!--Step 7-->
+
+<!--            <div class="card order-main-section step-box" id="step7"  style="display: none;">-->
+<!--              <div class="card-body p-0">-->
+
+<!--                <div class="d-flex justify-content-between align-items-center">-->
+<!--                    <span class="order-span">You are almost ready!</span>-->
+<!--                    <button class="btn-close" aria-label="close" type="button"></button>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash;Stepper Order&ndash;&gt;-->
+<!--                <div class="stepper-container">-->
+<!--                  <ul class="stepper">-->
+<!--                    <li class="active">-->
+<!--                      <div class="circle"></div>-->
+<!--                      <div class="label">Availability</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                      <div class="circle"></div>-->
+<!--                      <div class="label">Choose Plan</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                      <div class="circle"></div>-->
+<!--                      <div class="label">Choose Number</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                      <div class="circle"></div>-->
+<!--                      <div class="label">Create Account</div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                      <div class="circle"></div>-->
+<!--                      <div class="label">Make Payment</div>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+
+<!--&lt;!&ndash;                <div class="card payment-order">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="card-body p-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="row row-cols-1 row-cols-md-2 g-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <div class="col-md-6 left-col">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="card payment-detail-card border-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                          <div class="card-body p-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h5 class="title-4">Payment Details</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h6 class="title-5">Enter your details to complete your order</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="section-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="row mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="street" class="form-label label-1">Street</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="text" class="form-control step-1-form" id="street" placeholder="Ex. New York">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="apt" class="form-label label-1">Apt/Suite</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="text" class="form-control step-1-form" id="apt" placeholder="Ex. 103">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="row mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="apt" class="form-label label-1">Street</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <select class="form-select select-form" aria-label="Select State">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option selected>Select State</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="1">One</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="2">Two</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="3">Three</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="apt" class="form-label label-1">Country</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="text" class="form-control step-1-form" id="apt" placeholder="Ex. United States">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="row mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="street" class="form-label label-1">City</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="text" class="form-control step-1-form" id="street" placeholder="Ex. New York">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="apt" class="form-label label-1">Zip Code</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="text" class="form-control step-1-form" id="apt" placeholder="Ex. 123 456">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="row mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="col-md-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label for="street" class="form-label label-1">Apply Coupon</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="input-group coupon-input-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="text" id="coupon" class="form-control p-0" placeholder="Enter your coupon code" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <button class="apply-text" type="button">APPLY</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                      <div class="col-md-6 right-col">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="card payment-detail-card border-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                          <div class="card-body p-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h5 class="title-4">Order Summary</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h6 class="title-5">Enter your details to complete your order</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="section-5">&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="order-col">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h5 class="title-6">Order Summary</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h6 class="title-7">CAD 356.00</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="order-col">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h5 class="title-6">Coupon Discount</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h6 class="title-7">-CAD 10.00</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="order-col">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h5 class="title-6">Installation</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h6 class="title-8">Free</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="order-col-total">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h5 class="title-9">Grand Total</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h6 class="title-10">CAD 256.00</h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="order-check">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="form-check d-flex align-items-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <input type="checkbox" class="form-check-input custom-checkbox" id="exampleCheck1" style="margin-right: 0.75rem;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <label class="form-check-label remember" for="exampleCheck1">I agree to the <a class="orange-link" href="#">Terms and Conditions</a> ,&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" class="orange-link">Refund Policy</a> and <a href="#" class="orange-link">Privacy Policy</a> </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="card-section">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="row align-items-center justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="col-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <img src="{% static 'images/visa_inc_logo.png' %}" alt="VISA" class="card-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="col-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <img src="{% static 'images/Symbol.png' %}" alt="VISA" class="card-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="col-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <img src="{% static 'images/unionpay_international_logo.png' %}" alt="VISA" class="card-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="col-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <img src="{% static 'images/Google_Pay_Logo.png' %}" alt="VISA" class="card-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                  <div class="col-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <img src="{% static 'images/Apple_Pay_logo1.png' %}" alt="VISA" class="card-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;                                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--                <div class="payment-button-group d-flex flex-column gap-3 w-100">-->
+<!--                  <button class="btn next-btn w-100" type="button">Make Payment</button>-->
+<!--                  <button class="btn previous-btn disabled w-100" type="button">Previous</button>-->
+<!--                </div>-->
+
+
+
+<!--              </div>-->
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <div class="container section-container d-flex justify-content-center align-items-center">
+
+
+        </div>
+
+
+
+
+
+
+
+        {% endblock %}
+
+
+
+
+  <!--                        &lt;!&ndash;Selected plan and it's users card &ndash;&gt;-->
+<!--                        <div class="card summary-card">-->
+<!--                          <div class="card-body p-0">-->
+<!--                            &lt;!&ndash; Header with background and price &ndash;&gt;-->
+<!--                            <div class="summary-top d-flex justify-content-between align-items-center">-->
+<!--                              <div class="d-flex flex-column">-->
+<!--                                <h6 class="summary-title m-0">Office Advanced</h6>-->
+<!--                                <small class="summary-title-1">Billed monthly</small>-->
+<!--                              </div>-->
+<!--                              <div class="summary-price d-flex align-items-center">  $14.99/mo </div>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; User info &ndash;&gt;-->
+<!--                            <div class="p-3">-->
+<!--                              <p class="users-title m-0">3 <span class="fw-normal text-muted">users</span></p>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;Selected Device and it's quantity card&ndash;&gt;-->
+<!--                        <div class="card summary-card border-0">-->
+<!--                          <div class="card-body p-0">-->
+<!--                            <div class="device-card-order">-->
+<!--                              <div class="device-left">-->
+<!--                                <div class="fw-semibold">Yealink T31W</div>-->
+<!--                                <small class="text-muted">Monthly</small>-->
+<!--                              </div>-->
+<!--                              <div class="device-right">-->
+<!--                                <span>15</span>&nbsp;<small>devices</small>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
